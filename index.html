@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Guilherme Donzel · Product Manager & Owner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0e0e13;
+  --ink2:#16161e;
+  --ink3:#1f1f2a;
+  --gold:#c9973a;
+  --gold2:#e2b96a;
+  --gold3:#f5dfa5;
+  --cream:#f9f7f2;
+  --white:#ffffff;
+  --muted:#7a7a8c;
+  --muted2:#b0b0c0;
+  --border:#2a2a38;
+  --border2:#38384a;
+  --card:#18181f;
+  --card2:#202028;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden}
+::selection{background:var(--gold);color:var(--ink)}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 6vw;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(14,14,19,.95);backdrop-filter:blur(20px);border-color:var(--border)}
+.logo{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;color:var(--cream)}
+.logo em{color:var(--gold);font-style:italic}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.82rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--cream)}
+.nav-contact{font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--gold);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;text-transform:uppercase}
+.nav-contact:hover{border-color:var(--gold)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:8rem 6vw 6rem;position:relative;overflow:hidden}
+.hero-noise{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 55% at 72% 38%,rgba(201,151,58,.07) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 15% 70%,rgba(201,151,58,.04) 0%,transparent 55%)}
+.hero-line{position:absolute;left:6vw;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent 0%,var(--border2) 25%,var(--border2) 75%,transparent 100%);pointer-events:none}
+.hero-inner{max-width:840px;padding-left:2.5rem}
+.hero-label{display:inline-flex;align-items:center;gap:.6rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+.hero-label::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:glow 2.5s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 6px var(--gold)}50%{box-shadow:0 0 16px var(--gold2)}}
+h1{font-family:'Fraunces',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:600;line-height:1.04;letter-spacing:-.025em;margin-bottom:1.25rem}
+h1 .italic{font-style:italic;color:var(--gold2)}
+.hero-role{font-size:.92rem;color:var(--muted);margin-bottom:1.5rem;font-weight:400;letter-spacing:.02em;line-height:1.6}
+.hero-desc{font-size:1.05rem;color:var(--muted2);max-width:530px;margin-bottom:2.5rem;line-height:1.75;border-left:2px solid var(--border2);padding-left:1.25rem}
+.hero-desc strong{color:var(--cream);font-weight:500}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.cta-primary{background:var(--gold);color:var(--ink);padding:.7rem 1.8rem;border-radius:4px;font-size:.88rem;font-weight:600;letter-spacing:.03em;text-decoration:none;transition:all .2s}
+.cta-primary:hover{background:var(--gold2);transform:translateY(-1px)}
+.cta-ghost{border:1px solid var(--border2);color:var(--muted2);padding:.7rem 1.8rem;border-radius:4px;font-size:.88rem;font-weight:500;text-decoration:none;transition:all .2s}
+.cta-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:3rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid var(--border)}
+.hstat-n{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:600;color:var(--cream);line-height:1;margin-bottom:.25rem}
+.hstat-n span{color:var(--gold);font-style:italic}
+.hstat-l{font-size:.78rem;color:var(--muted);font-weight:400;line-height:1.4;max-width:120px}
+
+/* SECTIONS */
+section{padding:7rem 6vw}
+.container{max-width:1060px;margin:0 auto}
+.section-header{margin-bottom:3.5rem}
+.section-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:.8rem}
+.section-eyebrow::before{content:'';width:20px;height:1px;background:var(--gold)}
+.section-title{font-family:'Fraunces',serif;font-size:clamp(1.9rem,3.2vw,2.8rem);font-weight:600;line-height:1.1;letter-spacing:-.02em}
+.section-title em{font-style:italic;color:var(--gold2)}
+
+/* SOBRE */
+#sobre{background:var(--ink2)}
+.sobre-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
+.sobre-text{color:var(--muted2);line-height:1.8;margin-bottom:1.1rem;font-size:.975rem}
+.sobre-text strong{color:var(--cream);font-weight:500}
+
+/* TIMELINE — dot fix */
+.tl{display:flex;flex-direction:column;gap:0}
+.tl-item{display:grid;grid-template-columns:72px 16px 1fr;gap:0 .75rem;padding-bottom:2rem;position:relative;opacity:0;transform:translateX(16px);transition:all .5s ease}
+.tl-item.visible{opacity:1;transform:translateX(0)}
+.tl-item:not(:last-child) .tl-track::after{content:'';position:absolute;top:22px;bottom:0;left:7px;width:1px;background:var(--border2)}
+.tl-track{position:relative;display:flex;justify-content:center;padding-top:4px}
+.tl-dot{width:14px;height:14px;border-radius:50%;background:var(--gold);border:2px solid var(--ink2);box-shadow:0 0 8px rgba(201,151,58,.4);flex-shrink:0;margin-top:2px}
+.tl-year{font-family:'Fraunces',serif;font-size:.8rem;color:var(--gold);font-weight:600;padding-top:.15rem;text-align:right;letter-spacing:.01em;line-height:1.3}
+.tl-role{font-size:.95rem;font-weight:600;color:var(--cream);margin-bottom:.15rem}
+.tl-co{font-size:.8rem;color:var(--muted);margin-bottom:.4rem}
+.tl-desc{font-size:.865rem;color:var(--muted2);line-height:1.65}
+
+/* CASES */
+#cases{background:var(--ink)}
+.case-item{display:grid;grid-template-columns:1fr 2fr;border:1px solid var(--border);border-radius:6px;margin-bottom:1.25rem;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease,border-color .25s}
+.case-item.visible{opacity:1;transform:translateY(0)}
+.case-item:hover{border-color:rgba(201,151,58,.35)}
+.case-left{background:var(--card);padding:2rem 1.75rem;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:space-between}
+.case-number{font-family:'Fraunces',serif;font-size:3rem;font-weight:600;color:var(--border2);line-height:1;margin-bottom:auto}
+.case-badge{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,151,58,.35);padding:.3rem .75rem;border-radius:3px;margin-bottom:.75rem}
+.case-title{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;color:var(--cream);line-height:1.25;margin-bottom:.3rem}
+.case-co{font-size:.8rem;color:var(--muted)}
+.case-right{background:var(--card2);padding:2rem}
+.case-metrics-row{display:flex;gap:2rem;flex-wrap:wrap;padding-bottom:1.5rem;margin-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.cm-v{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;color:var(--gold2);line-height:1;display:block}
+.cm-l{font-size:.72rem;color:var(--muted);font-weight:400}
+.case-bullets{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.5rem}
+.case-bullets li{font-size:.875rem;color:var(--muted2);line-height:1.6;padding-left:1.1rem;position:relative}
+.case-bullets li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:.75rem;top:.05rem}
+.case-chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{font-size:.72rem;font-weight:500;color:var(--muted2);border:1px solid var(--border2);padding:.25rem .7rem;border-radius:3px;letter-spacing:.02em}
+
+/* SKILLS */
+#skills{background:var(--ink2)}
+.skills-top{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:1.25rem}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.75rem 2rem;transition:border-color .25s,background .25s;position:relative;overflow:hidden}
+.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+.skill-card:hover{border-color:rgba(201,151,58,.3);background:var(--card2)}
+.skill-card-icon{font-size:1.5rem;margin-bottom:1rem;display:block}
+.skill-card-title{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.skill-card-highlight{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;color:var(--cream);margin-bottom:.85rem;line-height:1.25}
+.skill-card-list{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.skill-card-list li{font-size:.85rem;color:var(--muted2);padding-left:.9rem;position:relative}
+.skill-card-list li::before{content:'–';position:absolute;left:0;color:var(--border2)}
+.skills-chips-wrap{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:2rem}
+.skills-chips-groups{display:flex;flex-direction:column;gap:1.5rem}
+.sk-group{}
+.sk-group-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem}
+.skills-chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.sk-chip{font-size:.78rem;font-weight:400;color:var(--muted2);border:1px solid var(--border2);padding:.28rem .75rem;border-radius:3px;letter-spacing:.01em;transition:all .18s;cursor:default}
+.sk-chip:hover{border-color:var(--gold);color:var(--gold2)}
+@media(max-width:700px){.skills-top{grid-template-columns:1fr}}
+
+/* FORMAÇÃO — segmentada */
+#formacao{background:var(--ink)}
+.form-segments{display:flex;flex-direction:column;gap:2.5rem}
+.form-seg-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.form-seg-title::before{content:'';width:16px;height:1px;background:var(--gold)}
+.form-list{display:flex;flex-direction:column;gap:.4rem}
+.form-row{display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:1rem;padding:.85rem 1rem;border-radius:4px;transition:background .2s}
+.form-row:hover{background:var(--card)}
+.form-y{font-family:'Fraunces',serif;font-size:.85rem;color:var(--gold);font-weight:600}
+.form-t{font-size:.925rem;color:var(--cream);font-weight:500}
+.form-t small{font-size:.8rem;color:var(--muted);font-weight:400}
+.form-d{font-size:.8rem;color:var(--muted)}
+.form-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;min-width:130px}
+.form-inst{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.form-badge{font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(201,151,58,.12);color:var(--gold2);border:1px solid rgba(201,151,58,.25);padding:.18rem .6rem;border-radius:3px;white-space:nowrap}
+.form-row-hl{background:var(--card);border-radius:4px}
+
+/* CARROSSEL DEPOIMENTOS */
+#depoimentos{background:var(--ink2)}
+.carousel-wrap{position:relative;overflow:hidden}
+.carousel-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);gap:1.25rem}
+.dep-card{flex:0 0 calc(33.333% - .84rem);background:var(--card);border:1px solid var(--border);border-radius:6px;padding:2rem;transition:border-color .2s}
+.dep-card:hover{border-color:rgba(201,151,58,.3);background:var(--card2)}
+.dep-q{font-size:.9rem;color:var(--muted2);line-height:1.8;margin-bottom:1.5rem;font-style:italic}
+.dep-q::before{content:'"';font-family:'Fraunces',serif;font-size:2.5rem;color:var(--gold);line-height:0;vertical-align:-.4em;margin-right:.1rem;font-style:normal}
+.dep-name{font-size:.875rem;font-weight:600;color:var(--cream);margin-bottom:.15rem}
+.dep-role{font-size:.78rem;color:var(--muted)}
+.carousel-nav{display:flex;align-items:center;gap:1rem;margin-top:1.75rem}
+.carousel-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border2);background:transparent;color:var(--muted2);cursor:pointer;font-size:1rem;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.carousel-btn:hover{border-color:var(--gold);color:var(--gold)}
+.carousel-dots{display:flex;gap:.5rem}
+.cdot{width:6px;height:6px;border-radius:50%;background:var(--border2);cursor:pointer;transition:background .2s}
+.cdot.active{background:var(--gold);width:18px;border-radius:3px}
+
+/* CONTATO */
+#contato{background:var(--ink);text-align:center;padding:8rem 6vw}
+.contato-title{font-family:'Fraunces',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:600;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.1}
+.contato-title em{font-style:italic;color:var(--gold2)}
+.contato-sub{font-size:1rem;color:var(--muted);max-width:440px;margin:0 auto 2.5rem;line-height:1.7}
+.contato-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.c-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.875rem;font-weight:500;text-decoration:none;padding:.7rem 1.6rem;border-radius:4px;transition:all .2s}
+.c-link.gold{background:var(--gold);color:var(--ink);font-weight:600}
+.c-link.gold:hover{background:var(--gold2);transform:translateY(-1px)}
+.c-link.outline{border:1px solid var(--border2);color:var(--muted2)}
+.c-link.outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* FOOTER */
+footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--muted)}
+.footer-logo em{color:var(--gold);font-style:italic}
+.footer-copy{font-size:.78rem;color:var(--muted)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:900px){
+  .sobre-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .case-item{grid-template-columns:1fr}
+  .case-left{border-right:none;border-bottom:1px solid var(--border)}
+  .dep-card{flex:0 0 calc(100% - 0rem)}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .hero-stats{gap:2rem}
+  .form-row{grid-template-columns:80px 1fr;gap:.5rem}
+  .form-inst{font-size:.7rem} .form-badge{font-size:.65rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="logo">Guilherme <em>Donzel</em></div>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#formacao">Formação</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+  </ul>
+  
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-line"></div>
+  <div class="hero-inner">
+    <div class="hero-label">Product Manager & Owner · São Paulo</div>
+    <h1>Construindo produtos<br>com <em>impacto real</em><br>na vida das pessoas</h1>
+    <p class="hero-role">PM · PO · Crédito & Recebíveis · FIDC · Pagamentos · Consignado · Banking & Tecnologia</p>
+    <p class="hero-desc">
+      Produto financeiro de alta complexidade é meu território. Conhecimento em: <strong>KYC, onboarding regulado, crédito, recebíveis, FIDC, pagamentos eIA aplicada à operação.</strong> <br> <br>Minha base em QA moldou a forma como construo produto. Sempre com atenção à regra de negócio, rastreabilidade, experiência e confiabilidade em fluxos onde a entrega precisa sustentar a operação.
+    </p>
+    <div class="hero-ctas">
+      <a href="#cases" class="cta-primary">Ver cases</a>
+      <a href="#depoimentos" class="cta-ghost">O que dizem sobre mim</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div>
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Sobre</div>
+          <h2 class="section-title">PM que entende<br>produto <em>por dentro</em></h2>
+        </div>
+        <p class="sobre-text reveal">Comecei minha carreira na <strong>SINOVA Sistemas</strong>, trabalhando com soluções de automação industrial. Foram 6 anos visitando multinacionais, desenvolvendo uma base técnica sólida em eletroeletrônica e T.I — e foi isso que despertou o caminho para tecnologia da informação.</p>
+        <p class="sobre-text reveal">Na <strong>Função Sistemas</strong>, me aprofundei no mundo dos negócios e produtos financeiros. O trabalho com soluções inovadoras me fez perceber a importância de entender não só tecnologia, mas as <strong>regras de negócio</strong> — algo essencial para atuar no setor financeiro.</p>
+        <p class="sobre-text reveal">Na <strong>Keeggo / Santander F1rst</strong>, atuei no time do sistema Plard — processamento de crédito de escala global. A proximidade com os Product Owners me deu uma visão mais ampla e estratégica, alinhando qualidade às metas de produto.</p>
+        <p class="sobre-text reveal">Hoje, como <strong>Product Owner no Grupo One7</strong>, lidero a Esteira de Crédito para MPMEs com IA embarcada via One7ai. Sou ponto focal de agilidade no grupo — conduzindo ritos, refinamentos, alinhamentos com fornecedores e times, e garantindo que cada ciclo entregue valor real para a operação.</p>
+        <p class="sobre-text reveal">Também estou idealizando um <strong>módulo de cobrança do zero</strong> — um produto que nasce com propósito claro: causar impacto real na vida financeira das pessoas.</p>
+      </div>
+      <div>
+        <div class="tl">
+          <div class="tl-item">
+            <div class="tl-year">2026<br>Atual</div>
+            <div class="tl-track"><div class="tl-dot"></div></div>
+            <div>
+              <div class="tl-role">Product Owner · Grupo One7</div>
+              <div class="tl-co">Soluções Financeiras MPMEs · Híbrido</div>
+              <div class="tl-desc">Esteira de Crédito com IA embarcada. 187 cards, 12 macrofrentes, One7ai. Módulo de cobrança em construção.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2025<br>2025</div>
+            <div class="tl-track"><div class="tl-dot"></div></div>
+            <div>
+              <div class="tl-role">Product Owner Sênior · Skopia</div>
+              <div class="tl-co">Banco Master · Híbrido</div>
+              <div class="tl-desc">Esteira de pagamentos consignado (PLC/PRC), Canais PJ, Base Consolidada de Risco, FIDC e antecipação de recebíveis. Duas squads.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2024<br>2024</div>
+            <div class="tl-track"><div class="tl-dot"></div></div>
+            <div>
+              <div class="tl-role">Quality Product Analyst Sênior · Skopia</div>
+              <div class="tl-co">Banco Master · Internet Banking PJ</div>
+              <div class="tl-desc">Evolução para estratégia de qualidade de produto, mentoria de talentos, compliance (LGPD, PCI-DSS, BACEN) e benchmarking de produto.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2022<br>2024</div>
+            <div class="tl-track"><div class="tl-dot"></div></div>
+            <div>
+              <div class="tl-role">Analista de Qualidade III · Keeggo</div>
+              <div class="tl-co">Santander F1rst · Sistema Plard</div>
+              <div class="tl-desc">Produto de crédito global. Simuladores Visa e Mastercard. BDD, AWS (EC2/S3) e incidentes em alto volume transacional.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2020<br>2022</div>
+            <div class="tl-track"><div class="tl-dot"></div></div>
+            <div>
+              <div class="tl-role">Analista de Testes Jr→Pleno · Função Sistemas</div>
+              <div class="tl-co">Banco Daycoval</div>
+              <div class="tl-desc">Crédito consignado, veículos, cartões e portabilidade CIP. Portabilidade via INSS, Serpro, E-Consig. De Jr I a Pleno em dois anos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Cases</div>
+      <h2 class="section-title">Entregas que ficam<br>na <em>operação</em></h2>
+    </div>
+
+    <div class="case-item">
+      <div class="case-left">
+        <div class="case-number">01</div>
+        <div>
+          <div class="case-badge">Em produção</div>
+          <div class="case-title">Esteira de Crédito</div>
+          <div class="case-co">Grupo One7 · Jan 2026 – Atual</div>
+        </div>
+      </div>
+      <div class="case-right">
+        <div class="case-metrics-row">
+          <div class="cm"><span class="cm-v">95</span><span class="cm-l">cards entregues</span></div>
+          <div class="cm"><span class="cm-v">187</span><span class="cm-l">cards mapeados</span></div>
+          <div class="cm"><span class="cm-v">12</span><span class="cm-l">macrofrentes</span></div>
+          <div class="cm"><span class="cm-v">8</span><span class="cm-l">sprints</span></div>
+          <div class="cm"><span class="cm-v">5 meses</span><span class="cm-l">jan → jun/26</span></div>
+        </div>
+        <ul class="case-bullets">
+          <li>Home da esteira: listagem de propostas, indicadores, filtros, SLA e status automático por proposta.</li>
+          <li>Auditoria Documental: checklist, aprovação/reprovação, devolução com motivos automáticos, importação e rastreabilidade de eventos.</li>
+          <li>IA embarcada via One7ai para 11 tipos de documentos — diagnóstico, tipo detectado e confiança de análise.</li>
+          <li>Performance financeira: IR, Faturamento, Endividamento, Balanço, DRE e Informação de Mercado com edição controlada e histórico.</li>
+          <li>Atuação como ponto focal de agilidade: condução de ritos, refinamentos técnicos e alinhamentos com fornecedores e áreas internas.</li>
+        </ul>
+        <div class="case-sub-label" style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;margin-top:1.5rem">Backlog em construção</div>
+        <ul class="case-bullets">
+          <li>Análise Cadastral: dados da empresa, quadro societário, grupo econômico, compliance, KYC, certidões e alertas CNAE.</li>
+          <li>Análise Financeira: faturamento analítico, endividamento, alavancagem, indicadores e simulação de carteira — com integrações a fontes externas.</li>
+          <li>Sócios e Vínculos: envolvidos PF/PJ, conciliação societária, vínculos, apontamentos e consultas Serasa.</li>
+          <li>Pareceres e Pós-Pareceres: Parecer Final com blocos One7ai, condições operacionais, garantias, limites e dossiê consolidado para comitê.</li>
+          <li>Gestão de Exceções, Atribuições e Onboarding — governança operacional e adoção da plataforma.</li>
+          <li>Mediação com fornecedores e integrações externas ao longo de todo o fluxo de crédito.</li>
+        </ul>
+        <div class="case-chips" style="margin-top:1rem">
+          <span class="chip">Discovery & Delivery</span><span class="chip">One7ai</span>
+          <span class="chip">Crédito PJ</span><span class="chip">Grupo Econômico</span>
+          <span class="chip">IA Embarcada</span><span class="chip">Ponto Focal Ágil</span>
+          <span class="chip">Jira + Confluence</span><span class="chip">Scrum</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-item">
+      <div class="case-left">
+        <div class="case-number">02</div>
+        <div>
+          <div class="case-badge">Entregue</div>
+          <div class="case-title">Internet Banking PJ & Consignado</div>
+          <div class="case-co">Banco Master · Skopia · 2024–2025</div>
+        </div>
+      </div>
+      <div class="case-right">
+        <ul class="case-bullets">
+          <li>Onboarding PJ completo com KYC e validação documental dentro das normas BACEN — contrato social, alçadas, usuário delegado e poderes de representação.</li>
+          <li>Jornada de pagamentos: Pix, TED, TEF e boletos com conciliação, agendamentos e gestão de limites por perfil.</li>
+          <li>Esteira de pagamentos do consignado (PLC e PRC): Proposta de Liberação de Crédito e Renegociação ponta a ponta. Conformidade com LGPD, MFA, mensageria e auditoria.</li>
+          <li>Base Consolidada de Risco: visão integrada de exposição, conciliação e risco por cliente PJ.</li>
+          <li>Antecipação de recebíveis via FIDC — viabilidade de negócio, aderência regulatória e construção de produtos escaláveis.</li>
+          <li>Evoluí de Quality Product Analyst Sênior para Product Owner durante o projeto. Duas squads simultâneas.</li>
+        </ul>
+        <div class="case-chips">
+          <span class="chip">Internet Banking PJ</span><span class="chip">BACEN</span>
+          <span class="chip">KYC</span><span class="chip">Pix / TED / TEF</span>
+          <span class="chip">Consignado</span><span class="chip">FIDC</span>
+          <span class="chip">LGPD / PCI-DSS</span><span class="chip">DoR / DoD</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-item">
+      <div class="case-left">
+        <div class="case-number">03</div>
+        <div>
+          <div class="case-badge">Projeto global</div>
+          <div class="case-title">Produto de Crédito Global</div>
+          <div class="case-co">Santander F1rst · 2022–2024</div>
+        </div>
+      </div>
+      <div class="case-right">
+        <ul class="case-bullets">
+          <li>Sistema Plard: ciclo de vida completo de processamento de crédito — autorização, captura, liquidação, cancelamentos e ajustes em alto volume.</li>
+          <li>Testes funcionais e integrados com simuladores oficiais Visa, Mastercard (MAS) e Maestro (MDFS) via POS.</li>
+          <li>BDD com Gherkin no Octane e Zephyr Scale. Validações via AWS (EC2, S3) e análise de incidentes com SQL e logs.</li>
+          <li>Proximidade diária com os Product Owners — avaliação de impacto, risco e tomada de decisão técnica e de negócio.</li>
+        </ul>
+        <div class="case-chips">
+          <span class="chip">Produto de Crédito</span><span class="chip">Alto Volume</span>
+          <span class="chip">Visa / Mastercard / Maestro</span>
+          <span class="chip">BDD</span><span class="chip">SQL</span><span class="chip">AWS</span>
+        </div>
+      </div>
+    </div>
+    <div class="case-item">
+      <div class="case-left">
+        <div class="case-number">04</div>
+        <div>
+          <div class="case-badge" style="color:var(--gold2);border-color:rgba(201,151,58,.25)">Em idealização</div>
+          <div class="case-title">Módulo de Cobrança</div>
+          <div class="case-co">Grupo One7 · 2026</div>
+        </div>
+      </div>
+      <div class="case-right">
+        <ul class="case-bullets">
+          <li>Produto sendo idealizado do zero com foco em impacto real na vida financeira das pessoas — não apenas eficiência operacional.</li>
+          <li>Estruturação da jornada de cobrança com visão de produto: réguas, fluxos de comunicação, canais e tratamento de inadimplência.</li>
+          <li>Discovery ativo com áreas de negócio, crédito e operações para mapear dores reais e oportunidades de automação.</li>
+          <li>Integração prevista com a Esteira de Crédito — criando um ciclo completo de análise, concessão e recuperação.</li>
+        </ul>
+        <div class="case-chips">
+          <span class="chip">Discovery</span><span class="chip">Cobrança</span>
+          <span class="chip">Produto do Zero</span><span class="chip">Integração Esteira</span>
+          <span class="chip">Impacto Social</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Competências</div>
+      <h2 class="section-title">Skills & <em>domínios</em></h2>
+    </div>
+
+    <div class="skills-top reveal">
+      <div class="skill-card">
+        <span class="skill-card-icon">🏦</span>
+        <div class="skill-card-title">Domínio Financeiro</div>
+        <div class="skill-card-highlight">Crédito PJ · Pagamentos · FIDC · IA Documental</div>
+        <ul class="skill-card-list">
+          <li>Crédito PJ / Consignado / Portabilidade CIP</li>
+          <li>Pix, TED, TEF, Boleto — conciliação e limites</li>
+          <li>KYC / Onboarding regulado BACEN</li>
+          <li>Risco de crédito, FIDC e antecipação de recebíveis</li>
+          <li>IA embarcada para análise documental (One7ai)</li>
+          <li>LGPD / PCI-DSS / Regulatório financeiro</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <span class="skill-card-icon">🎯</span>
+        <div class="skill-card-title">Produto & Estratégia</div>
+        <div class="skill-card-highlight">Discovery · Delivery · Roadmap · Métricas</div>
+        <ul class="skill-card-list">
+          <li>Discovery & Delivery com ritos ágeis</li>
+          <li>Gestão de backlog, priorização e roadmap</li>
+          <li>Épicos, histórias, DoR / DoD / critérios de aceite</li>
+          <li>OKRs, métricas de produto e experimentação A/B</li>
+          <li>Ponto focal de agilidade — refinamentos e cerimônias</li>
+          <li>Alinhamento com fornecedores e stakeholders</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <span class="skill-card-icon">🔍</span>
+        <div class="skill-card-title">Qualidade & Engenharia</div>
+        <div class="skill-card-highlight">QA · BDD · Incidentes · Causa Raiz</div>
+        <ul class="skill-card-list">
+          <li>Testes funcionais, integrados e de regressão</li>
+          <li>Cenários BDD com Gherkin — Octane e Zephyr Scale</li>
+          <li>Simuladores Visa, Mastercard e Maestro via POS</li>
+          <li>Análise de incidentes com SQL e logs</li>
+          <li>Postman / Swagger / SoapUI / Octane</li>
+          <li>Qualidade como mentalidade — não como etapa</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <span class="skill-card-icon">⚙️</span>
+        <div class="skill-card-title">Tecnologia & Liderança</div>
+        <div class="skill-card-highlight">Cloud · IA · Pessoas · Dados</div>
+        <ul class="skill-card-list">
+          <li>AWS (EC2, S3) · Azure DP900 / AI900</li>
+          <li>Machine Learning / NLP / LLMs aplicados a produto</li>
+          <li>SQL para investigação e análise de dados</li>
+          <li>Lógica de programação com JavaScript</li>
+          <li>Gestão e liderança de pessoas / mentoria</li>
+          <li>Jira · Confluence · Scrum · Kanban</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skills-chips-wrap reveal">
+      <div class="skills-chips-groups">
+
+        <div class="sk-group">
+          <div class="sk-group-label">Produto</div>
+          <div class="skills-chips">
+            <span class="sk-chip">Discovery</span>
+            <span class="sk-chip">Delivery</span>
+            <span class="sk-chip">Backlog</span>
+            <span class="sk-chip">Roadmap</span>
+            <span class="sk-chip">OKRs</span>
+            <span class="sk-chip">Épicos & Histórias</span>
+            <span class="sk-chip">DoR / DoD</span>
+            <span class="sk-chip">Critérios de Aceite</span>
+            <span class="sk-chip">Experimentação A/B</span>
+            <span class="sk-chip">Métricas de Produto</span>
+            <span class="sk-chip">Governança de Produto</span>
+            <span class="sk-chip">Priorização</span>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <div class="sk-group-label">Crédito & Finanças</div>
+          <div class="skills-chips">
+            <span class="sk-chip">Crédito PJ</span>
+            <span class="sk-chip">Crédito Consignado</span>
+            <span class="sk-chip">Portabilidade CIP</span>
+            <span class="sk-chip">Renegociação (PRC)</span>
+            <span class="sk-chip">Proposta de Crédito (PLC)</span>
+            <span class="sk-chip">Antecipação de Recebíveis</span>
+            <span class="sk-chip">FIDC</span>
+            <span class="sk-chip">Base Consolidada de Risco</span>
+            <span class="sk-chip">Risco de Crédito</span>
+            <span class="sk-chip">Grupo Econômico</span>
+            <span class="sk-chip">Análise Cadastral</span>
+            <span class="sk-chip">Cobrança</span>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <div class="sk-group-label">Pagamentos & Banking</div>
+          <div class="skills-chips">
+            <span class="sk-chip">Pix</span>
+            <span class="sk-chip">TED</span>
+            <span class="sk-chip">TEF</span>
+            <span class="sk-chip">Boleto</span>
+            <span class="sk-chip">Internet Banking PJ</span>
+            <span class="sk-chip">Canais PJ</span>
+            <span class="sk-chip">KYC</span>
+            <span class="sk-chip">Onboarding BACEN</span>
+            <span class="sk-chip">LGPD</span>
+            <span class="sk-chip">PCI-DSS</span>
+            <span class="sk-chip">Compliance</span>
+            <span class="sk-chip">Formalização</span>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <div class="sk-group-label">Qualidade & Testes</div>
+          <div class="skills-chips">
+            <span class="sk-chip">BDD</span>
+            <span class="sk-chip">Gherkin</span>
+            <span class="sk-chip">Testes Funcionais</span>
+            <span class="sk-chip">Testes Integrados</span>
+            <span class="sk-chip">Testes de Regressão</span>
+            <span class="sk-chip">Causa Raiz</span>
+            <span class="sk-chip">Análise de Incidentes</span>
+            <span class="sk-chip">Visa / Mastercard / Maestro</span>
+            <span class="sk-chip">Octane</span>
+            <span class="sk-chip">Zephyr Scale</span>
+            <span class="sk-chip">Postman</span>
+            <span class="sk-chip">SoapUI</span>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <div class="sk-group-label">IA & Tecnologia</div>
+          <div class="skills-chips">
+            <span class="sk-chip">One7ai</span>
+            <span class="sk-chip">IA Generativa</span>
+            <span class="sk-chip">LLMs</span>
+            <span class="sk-chip">Machine Learning</span>
+            <span class="sk-chip">NLP</span>
+            <span class="sk-chip">Deep Learning</span>
+            <span class="sk-chip">AWS (EC2, S3)</span>
+            <span class="sk-chip">Azure DP900</span>
+            <span class="sk-chip">Azure AI900</span>
+            <span class="sk-chip">SQL</span>
+            <span class="sk-chip">JavaScript</span>
+            <span class="sk-chip">Swagger</span>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <div class="sk-group-label">Agilidade & Ferramentas</div>
+          <div class="skills-chips">
+            <span class="sk-chip">Scrum</span>
+            <span class="sk-chip">Kanban</span>
+            <span class="sk-chip">Jira</span>
+            <span class="sk-chip">Confluence</span>
+            <span class="sk-chip">Refinamento</span>
+            <span class="sk-chip">Planning</span>
+            <span class="sk-chip">Review</span>
+            <span class="sk-chip">Retrospectiva</span>
+            <span class="sk-chip">Gestão de Pessoas</span>
+            <span class="sk-chip">Mentoria</span>
+            <span class="sk-chip">Stakeholders</span>
+            <span class="sk-chip">Eficiência Operacional</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMAÇÃO -->
+<section id="formacao">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Formação</div>
+      <h2 class="section-title">Aprendizado <em>contínuo</em></h2>
+    </div>
+    <div class="form-segments reveal">
+
+      <div>
+        <div class="form-seg-title">Produto & Gestão</div>
+        <div class="form-list">
+          <div class="form-row form-row-hl">
+            <div class="form-y">Mai 2026</div>
+            <div class="form-t">PM3 — Product Discovery <small>· Descoberta, JTBD, pesquisa com usuários, mapeamento de oportunidades, priorização e validação de hipóteses</small></div>
+            <div class="form-meta"><span class="form-inst">PM3</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row form-row-hl">
+            <div class="form-y">Dez 2025</div>
+            <div class="form-t">PM3 — Product Management <small>· Discovery, métricas, experimentação A/B, priorização e estratégia orientada a dados</small></div>
+            <div class="form-meta"><span class="form-inst">PM3</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">Set 2025</div>
+            <div class="form-t">Become a Product Manager <small>· Pesquisa, prototipagem, métricas e liderança de produtos digitais</small></div>
+            <div class="form-meta"><span class="form-inst">Udemy · 13h</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">Set 2024</div>
+            <div class="form-t">Gestão de Produtos — Product Management</div>
+            <div class="form-meta"><span class="form-inst">Udemy · 7h</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">Ago 2024</div>
+            <div class="form-t">Product Owners Fundamentals — IIBA</div>
+            <div class="form-meta"><span class="form-inst">Udemy · 3h</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">Abr 2023</div>
+            <div class="form-t">Fast MBA — Liderança e Gestão de Pessoas <small>· Gestão de equipes, metas, KPIs, feedback estruturado e desenvolvimento de talentos</small></div>
+            <div class="form-meta"><span class="form-inst">Fast MBA</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">Mar 2023</div>
+            <div class="form-t">Análise de Negócios — requisitos, escopo, MVPs e stakeholders</div>
+            <div class="form-meta"><span class="form-inst">Udemy</span><span class="form-badge">Concluído</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-seg-title">Cloud, IA & Tecnologia</div>
+        <div class="form-list">
+          <div class="form-row">
+            <div class="form-y">Out 2025</div>
+            <div class="form-t">Formação em Inteligência Artificial <small>· ML, Deep Learning, NLP e IA Generativa/LLMs com Python — qualidade de modelos e rastreabilidade</small></div>
+            <div class="form-meta"><span class="form-inst">Udemy · 32h</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">Fev 2024</div>
+            <div class="form-t">Lógica de Programação com JavaScript <small>· Estruturas de dados e algoritmos</small></div>
+            <div class="form-meta"><span class="form-inst">Udemy · 45h</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">Ago 2022</div>
+            <div class="form-t">AWS Academy Cloud Foundations</div>
+            <div class="form-meta"><span class="form-inst">Amazon Web Services</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">Ago 2022</div>
+            <div class="form-t">Azure DP900 — Banco de Dados em Nuvem</div>
+            <div class="form-meta"><span class="form-inst">SENAI · 40h</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">Ago 2022</div>
+            <div class="form-t">Azure AI900 — Aplicações em Nuvem</div>
+            <div class="form-meta"><span class="form-inst">SENAI · 40h</span><span class="form-badge">Concluído</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-seg-title">Formação Acadêmica</div>
+        <div class="form-list">
+          <div class="form-row form-row-hl">
+            <div class="form-y">2020–2022</div>
+            <div class="form-t">Técnico em Informática para Internet <small>· Testes manuais, desenvolvimento web, redes</small></div>
+            <div class="form-meta"><span class="form-inst">SENAI · 18 meses</span><span class="form-badge">🏆 Melhor Aluno</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">2014–2017</div>
+            <div class="form-t">Tecnólogo em Mecatrônica Industrial <small>· Mechatronics, Robotics and Automation Engineering</small></div>
+            <div class="form-meta"><span class="form-inst">Univ. Grande ABC</span><span class="form-badge">Concluído</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-y">2011–2013</div>
+            <div class="form-t">Técnico em Automação Industrial</div>
+            <div class="form-meta"><span class="form-inst">ETEC Jorge Street</span><span class="form-badge">Concluído</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS — CARROSSEL -->
+<section id="depoimentos">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Depoimentos</div>
+      <h2 class="section-title">O que dizem<br><em>sobre mim</em></h2>
+    </div>
+    <div class="reveal">
+      <div class="carousel-wrap">
+        <div class="carousel-track" id="track">
+          <div class="dep-card">
+            <p class="dep-q">Trabalhei com o Guilherme na Skopia e posso dizer que é um profissional diferenciado. Iniciou como QA, mas rapidamente se destacou pelo profundo entendimento de produto, visão analítica e capacidade de enxergar além do óbvio. Evoluiu naturalmente para Product Owner, assumindo responsabilidades com maturidade, organização e foco em resultados. Um profissional fora da curva.</p>
+            <div class="dep-name">Marcos Gotado</div>
+            <div class="dep-role">Software Engineer · Skopia / Banco Master</div>
+          </div>
+          <div class="dep-card">
+            <p class="dep-q">Guilherme esteve à frente de duas Squads que me atendiam no Master — profissional muito proativo, dinâmico e do tipo que "missão dada é missão cumprida". Muito bom de relacionamentos, vai atrás da solução e de quem pode contribuir. Bastante completo e eficiente.</p>
+            <div class="dep-name">Anderson Leite</div>
+            <div class="dep-role">Gerente de Produtos · Banco Master</div>
+          </div>
+          <div class="dep-card">
+            <p class="dep-q">Guilherme é um excelente profissional e um grande amigo. Sempre colaborativo, competente e comprometido — recomendo demais!</p>
+            <div class="dep-name">Carlos Eduardo Ferreira</div>
+            <div class="dep-role">Product Manager · CSPO · Digital Products</div>
+          </div>
+          <div class="dep-card">
+            <p class="dep-q">O Gui é um profissional ímpar. Tem todo o cuidado e trato com as pessoas ao seu redor, me ensinou sobre processos e gestão e sempre esteve presente na resolução de qualquer problema. Sua visão de negócio agrega valor e faz com que todos à sua volta cresçam de forma saudável. Capaz de resolver tarefas complexas com soluções simples.</p>
+            <div class="dep-name">Ryan Bissoni</div>
+            <div class="dep-role">Especialista em Sistemas · Skopia</div>
+          </div>
+          <div class="dep-card">
+            <p class="dep-q">Guilherme é engajado, atento a detalhes e sempre pronto a apoiar colegas. Tem excelente conhecimento técnico, principalmente em gestão ágil — confesso que neste ponto sou eu quem aprende com ele. Excelente pessoa e de fortes princípios. Me sinto privilegiado por termos trabalhado juntos.</p>
+            <div class="dep-name">Mauro Bellasque</div>
+            <div class="dep-role">Gerente de Produtos e Plataforma Digital · Skopia</div>
+          </div>
+          <div class="dep-card">
+            <p class="dep-q">Guilherme é um parceiro nota 10, sempre conectado com tudo e todos. Sem dúvida um dos melhores PMs que já trabalhei em parceria — sabe aquele profissional que não tem tempo ruim? Ele manda bem e está sempre disposto a ajudar e cooperar com o time.</p>
+            <div class="dep-name">Renan Rocha</div>
+            <div class="dep-role">Staff Product Manager · BaaS & Financial Products</div>
+          </div>
+          <div class="dep-card">
+            <p class="dep-q">Trabalhar com o Gui foi uma experiência incrível. Atencioso, parceiro de verdade, com uma paciência e sabedoria que sempre me impressionaram. Conduz o dia a dia com leveza, colaboração e dedicação. O que começou como parceria de trabalho se transformou em amizade da vida — um presente que levarei sempre.</p>
+            <div class="dep-name">Beatriz Soares</div>
+            <div class="dep-role">Product Manager · Banking & Payments</div>
+          </div>
+          <div class="dep-card">
+            <p class="dep-q">O Gui é um profissional extremamente competente e dedicado. Atuando sempre com excelência, responsabilidade e atenção aos detalhes, contribuindo de forma significativa para o sucesso dos projetos em que está envolvido.</p>
+            <div class="dep-name">Felipe Stettener Iajuc</div>
+            <div class="dep-role">IT Specialist · F1RST Tecnologia / Santander</div>
+          </div>
+          <div class="dep-card">
+            <p class="dep-q">Trabalhar com o Gui foi uma das experiências mais enriquecedoras que tive em times de produto. É um PO no melhor sentido: curioso por natureza, comprometido com o propósito, genuinamente preocupado com o valor que cada entrega gera. Ele se posiciona com firmeza e respeito, adentra discussões com profundidade e não mede esforços — seja refinando backlog, ouvindo stakeholders ou apoiando um colega. Toda equipe que tiver o Guilherme terá, sem dúvida, um diferencial.</p>
+            <div class="dep-name">Fabiana Corrêa</div>
+            <div class="dep-role">Enterprise Agile Coach · ex-gestora direta na Skopia</div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prev" aria-label="Anterior">&#8592;</button>
+        <button class="carousel-btn" id="next" aria-label="Próximo">&#8594;</button>
+        <div class="carousel-dots" id="dots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="container">
+    <h2 class="contato-title reveal">Boa ideia merece<br>uma <em>conversa</em></h2>
+    <p class="contato-sub reveal">Aberto a trocar sobre produto, fintech e desafios interessantes. Me encontre no LinkedIn.</p>
+    <div class="contato-row reveal">
+      
+      <a href="https://linkedin.com/in/guilherme-donzel" target="_blank" class="c-link gold">LinkedIn</a>
+      
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Guilherme <em>Donzel</em></div>
+  <div class="footer-copy">Product Manager & Owner · São Paulo, SP · 2026</div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.tl-item,.case-item').forEach(el=>obs.observe(el));
+document.querySelectorAll('.case-item').forEach((el,i)=>el.style.transitionDelay=`${i*.1}s`);
+document.querySelectorAll('.tl-item').forEach((el,i)=>el.style.transitionDelay=`${i*.1}s`);
+
+// Nav scroll
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40));
+
+// Carrossel
+const track = document.getElementById('track');
+const cards = track.querySelectorAll('.dep-card');
+const dotsEl = document.getElementById('dots');
+let cur = 0;
+
+function getVisible(){return window.innerWidth<=900?1:3}
+
+function buildDots(){
+  dotsEl.innerHTML='';
+  const pages=Math.ceil(cards.length/getVisible());
+  for(let i=0;i<pages;i++){
+    const d=document.createElement('div');
+    d.className='cdot'+(i===0?' active':'');
+    d.onclick=()=>goTo(i*getVisible());
+    dotsEl.appendChild(d);
+  }
+}
+
+function goTo(idx){
+  const v=getVisible();
+  const max=cards.length-v;
+  if(idx>max) cur=0;
+  else if(idx<0) cur=max;
+  else cur=idx;
+  const cardW=cards[0].offsetWidth+20;
+  track.style.transform=`translateX(-${cur*cardW}px)`;
+  dotsEl.querySelectorAll('.cdot').forEach((d,i)=>{
+    d.classList.toggle('active',i===Math.floor(cur/v));
+  });
+}
+
+document.getElementById('prev').onclick=()=>goTo(cur-getVisible());
+document.getElementById('next').onclick=()=>goTo(cur+getVisible());
+window.addEventListener('resize',()=>{buildDots();goTo(0)});
+buildDots();
+</script>
+</body>
+</html>
