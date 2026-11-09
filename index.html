@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Guilherme Donzel · Product Manager & Owner</title>
-<link rel="icon" href="https://ui-avatars.com/api/?name=GD&background=c9973a&color=0e0e13&size=32" type="image/png">
+<link rel="icon" href="https://ui-avatars.com/api/?name=GD&background=c9973a&color=0e0e13&size=32" type="image/png">  
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -32,6 +32,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Inter',sans-serif;fon
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--ink)}
 ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 6vw;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
 nav.scrolled{background:rgba(14,14,19,.95);backdrop-filter:blur(20px);border-color:var(--border)}
@@ -42,6 +43,7 @@ nav.scrolled{background:rgba(14,14,19,.95);backdrop-filter:blur(20px);border-col
 .nav-links a:hover{color:var(--cream)}
 .nav-contact{font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--gold);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;text-transform:uppercase}
 .nav-contact:hover{border-color:var(--gold)}
+
 /* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;padding:8rem 6vw 6rem;position:relative;overflow:hidden}
 .hero-noise{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 55% at 72% 38%,rgba(201,151,58,.07) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 15% 70%,rgba(201,151,58,.04) 0%,transparent 55%)}
@@ -51,7 +53,7 @@ nav.scrolled{background:rgba(14,14,19,.95);backdrop-filter:blur(20px);border-col
 .hero-label::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:glow 2.5s ease-in-out infinite}
 @keyframes glow{0%,100%{box-shadow:0 0 6px var(--gold)}50%{box-shadow:0 0 16px var(--gold2)}}
 h1{font-family:'Fraunces',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:600;line-height:1.04;letter-spacing:-.025em;margin-bottom:1.25rem}
-h1 .italic{font-style:italic;color:var(--gold2)}
+h1 em,h1 .italic{font-style:italic;color:var(--gold2)}
 .hero-role{font-size:.92rem;color:var(--muted);margin-bottom:1.5rem;font-weight:400;letter-spacing:.02em;line-height:1.6}
 .hero-desc{font-size:1.05rem;color:var(--muted2);max-width:530px;margin-bottom:2.5rem;line-height:1.75;border-left:2px solid var(--border2);padding-left:1.25rem}
 .hero-desc strong{color:var(--cream);font-weight:500}
@@ -64,6 +66,7 @@ h1 .italic{font-style:italic;color:var(--gold2)}
 .hstat-n{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:600;color:var(--cream);line-height:1;margin-bottom:.25rem}
 .hstat-n span{color:var(--gold);font-style:italic}
 .hstat-l{font-size:.78rem;color:var(--muted);font-weight:400;line-height:1.4;max-width:120px}
+
 /* SECTIONS */
 section{padding:7rem 6vw}
 .container{max-width:1060px;margin:0 auto}
@@ -72,11 +75,13 @@ section{padding:7rem 6vw}
 .section-eyebrow::before{content:'';width:20px;height:1px;background:var(--gold)}
 .section-title{font-family:'Fraunces',serif;font-size:clamp(1.9rem,3.2vw,2.8rem);font-weight:600;line-height:1.1;letter-spacing:-.02em}
 .section-title em{font-style:italic;color:var(--gold2)}
+
 /* SOBRE */
 #sobre{background:var(--ink2)}
 .sobre-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
 .sobre-text{color:var(--muted2);line-height:1.8;margin-bottom:1.1rem;font-size:.975rem}
 .sobre-text strong{color:var(--cream);font-weight:500}
+
 /* TIMELINE — dot fix */
 .tl{display:flex;flex-direction:column;gap:0}
 .tl-item{display:grid;grid-template-columns:72px 16px 1fr;gap:0 .75rem;padding-bottom:2rem;position:relative;opacity:0;transform:translateX(16px);transition:all .5s ease}
@@ -88,6 +93,7 @@ section{padding:7rem 6vw}
 .tl-role{font-size:.95rem;font-weight:600;color:var(--cream);margin-bottom:.15rem}
 .tl-co{font-size:.8rem;color:var(--muted);margin-bottom:.4rem}
 .tl-desc{font-size:.865rem;color:var(--muted2);line-height:1.65}
+
 /* CASES */
 #cases{background:var(--ink)}
 .case-item{display:grid;grid-template-columns:1fr 2fr;border:1px solid var(--border);border-radius:6px;margin-bottom:1.25rem;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease,border-color .25s}
@@ -106,27 +112,130 @@ section{padding:7rem 6vw}
 .case-bullets li{font-size:.875rem;color:var(--muted2);line-height:1.6;padding-left:1.1rem;position:relative}
 .case-bullets li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:.75rem;top:.05rem}
 .case-chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.case-callout{border-left:2px solid var(--gold);background:rgba(201,151,58,.06);padding:1rem 1.25rem;border-radius:0 4px 4px 0;margin-bottom:1.5rem}
+.case-callout-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.case-callout p{font-size:.875rem;color:var(--muted2);line-height:1.65}
+/* HUB ONE7 */
+.hub{border:1px solid rgba(201,151,58,.35);border-radius:10px;background:linear-gradient(180deg,rgba(201,151,58,.07),transparent 320px),var(--card);margin-bottom:3rem}
+.hub-head{padding:2.75rem 2.75rem 2.25rem;border-bottom:1px solid var(--border)}
+.hub-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
+.hub-title{font-family:'Fraunces',serif;font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:600;line-height:1.12;letter-spacing:-.02em;color:var(--cream);margin-bottom:1rem}
+.hub-title em{font-style:italic;color:var(--gold2)}
+.hub-lead{font-size:.975rem;color:var(--muted2);line-height:1.75;max-width:680px}
+.hub-lead strong{color:var(--cream);font-weight:500}
+.hub-flow{display:grid;grid-template-columns:240px 1fr}
+.hub-rail{position:sticky;top:96px;align-self:start;padding:2.25rem 1.5rem 2.25rem 2.75rem}
+.rail-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem}
+.rail{list-style:none;display:flex;flex-direction:column;gap:.35rem;position:relative}
+.rail-item{display:flex;gap:.9rem;align-items:flex-start;padding:.7rem .75rem;margin-left:-.75rem;border-radius:6px;text-decoration:none;transition:background .2s}
+.rail-item:hover{background:rgba(255,255,255,.03)}
+.rail-item:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.ri-n{flex:0 0 30px;height:30px;border-radius:50%;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:.78rem;font-weight:600;color:var(--muted);transition:all .3s;background:var(--card)}
+.ri-txt{display:flex;flex-direction:column;gap:.1rem;padding-top:.2rem}
+.ri-v{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:var(--muted2);line-height:1.15;transition:color .3s}
+.ri-p{font-size:.72rem;color:var(--muted);line-height:1.35}
+.rail-item.active .ri-n{background:var(--gold);border-color:var(--gold);color:var(--ink);box-shadow:0 0 14px rgba(201,151,58,.35)}
+.rail-item.active .ri-v{color:var(--cream)}
+.rail-item.done .ri-n{border-color:var(--gold);color:var(--gold)}
+.rail-progress{margin-top:1.5rem;height:2px;background:var(--border);border-radius:2px;overflow:hidden}
+.rail-progress span{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .4s ease}
+.hub-stages{border-left:1px solid var(--border)}
+.stage{padding:2.5rem 2.75rem;scroll-margin-top:90px;border-bottom:1px solid var(--border);transition:opacity .4s}
+.hub-live .stage{opacity:.5}
+.stage:last-child{border-bottom:none}
+.hub-live .stage.active{opacity:1}
+.st-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.st-top .case-badge{margin-bottom:0}
+.st-tag{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.st-tag b{font-family:'Fraunces',serif;font-size:.95rem;letter-spacing:0;margin-right:.35rem}
+.st-title{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--cream);line-height:1.2;letter-spacing:-.01em;margin-bottom:.5rem}
+.st-q{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--gold2);line-height:1.5;margin-bottom:1.5rem;max-width:560px}
+.hub-base{display:flex;gap:1.25rem;align-items:baseline;padding:1.5rem 2.75rem;border-top:1px solid var(--border);background:rgba(0,0,0,.15);border-radius:0 0 10px 10px}
+.hub-base-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.hub-base p{font-size:.875rem;color:var(--muted2);line-height:1.65}
+.hub-base strong{color:var(--cream);font-weight:500}
+/* Trajetória anterior — tom neutro, separado da One7 */
+.prev-head{display:flex;align-items:center;gap:.75rem 1rem;flex-wrap:wrap;margin:4.5rem 0 1.5rem}
+.prev-head::after{content:'';flex:1;min-width:40px;height:1px;background:var(--border2)}
+.prev-tag{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--muted2);padding:.3rem .7rem;border-radius:3px}
+.prev-sub{font-size:.8rem;color:var(--muted)}
+.prev-cases .case-item{border-color:var(--border);border-left:3px solid var(--muted)}
+.prev-cases .case-item:hover{border-color:var(--border2);border-left-color:var(--muted2)}
+.prev-cases .case-left{background:transparent}
+.prev-cases .case-right{background:rgba(255,255,255,.015)}
+.prev-cases .case-badge{color:var(--muted2);border-color:var(--border2)}
+.prev-cases .case-number{color:var(--border2)}
+.prev-cases .case-bullets li::before{color:var(--muted)}
+@media(max-width:900px){
+  .hub-flow{grid-template-columns:1fr}
+  .hub-rail{display:none}
+  .hub-stages{border-left:none}
+  .hub-live .stage{opacity:1}
+}
+@media(max-width:640px){
+  .hub-head{padding:2rem 1.25rem 1.5rem}
+  .stage{padding:2rem 1.25rem}
+  .st-title{font-size:1.3rem}
+  .hub-base{flex-direction:column;gap:.4rem;padding:1.25rem}
+}
 .chip{font-size:.72rem;font-weight:500;color:var(--muted2);border:1px solid var(--border2);padding:.25rem .7rem;border-radius:3px;letter-spacing:.02em}
-/* SKILLS */
+
+/* SKILLS — v3 leve */
 #skills{background:var(--ink2)}
-.skills-top{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:1.25rem}
-.skill-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.75rem 2rem;transition:border-color .25s,background .25s;position:relative;overflow:hidden}
-.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent)}
-.skill-card:hover{border-color:rgba(201,151,58,.3);background:var(--card2)}
-.skill-card-icon{font-size:1.5rem;margin-bottom:1rem;display:block}
-.skill-card-title{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
-.skill-card-highlight{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;color:var(--cream);margin-bottom:.85rem;line-height:1.25}
-.skill-card-list{list-style:none;display:flex;flex-direction:column;gap:.4rem}
-.skill-card-list li{font-size:.85rem;color:var(--muted2);padding-left:.9rem;position:relative}
-.skill-card-list li::before{content:'–';position:absolute;left:0;color:var(--border2)}
-.skills-chips-wrap{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:2rem}
-.skills-chips-groups{display:flex;flex-direction:column;gap:1.5rem}
-.sk-group{}
-.sk-group-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem}
-.skills-chips{display:flex;flex-wrap:wrap;gap:.45rem}
-.sk-chip{font-size:.78rem;font-weight:400;color:var(--muted2);border:1px solid var(--border2);padding:.28rem .75rem;border-radius:3px;letter-spacing:.01em;transition:all .18s;cursor:default}
-.sk-chip:hover{border-color:var(--gold);color:var(--gold2)}
-@media(max-width:700px){.skills-top{grid-template-columns:1fr}}
+.dom{margin-bottom:3.5rem}
+.dom-head{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:2.25rem}
+.dom-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.dom-sub{font-size:.92rem;color:var(--muted2)}
+.line{list-style:none;display:grid;grid-template-columns:repeat(7,1fr);position:relative}
+.line::before{content:'';position:absolute;top:6px;left:6px;right:6px;height:1px;background:linear-gradient(90deg,var(--gold),var(--border2) 60%,var(--gold))}
+.line li{display:flex;flex-direction:column;padding-right:1rem;position:relative}
+.ln-dot{width:13px;height:13px;border-radius:50%;background:var(--ink2);border:2px solid var(--gold);position:relative;z-index:1;margin-bottom:1.1rem;transition:background .2s,box-shadow .2s}
+.line li:hover .ln-dot{background:var(--gold);box-shadow:0 0 10px rgba(201,151,58,.5)}
+.ln-n{font-family:'Fraunces',serif;font-size:.78rem;font-weight:600;color:var(--gold);margin-bottom:.2rem}
+.ln-t{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;color:var(--cream);line-height:1.2;margin-bottom:.4rem}
+.ln-d{font-size:.78rem;color:var(--muted2);line-height:1.5;margin-bottom:.5rem}
+.ln-w{font-size:.68rem;font-weight:600;letter-spacing:.03em;color:var(--gold2)}
+.dom-foot{display:flex;justify-content:space-between;align-items:center;gap:1.5rem 2rem;flex-wrap:wrap;margin-top:2.25rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.nums{display:flex;gap:2.25rem;flex-wrap:wrap}
+.num{display:flex;align-items:baseline;gap:.5rem}
+.num b{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;color:var(--cream);line-height:1}
+.num span{font-size:.78rem;color:var(--muted2);max-width:110px;line-height:1.3}
+.reg-line{font-size:.78rem;color:var(--muted2)}
+.reg-line span{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:.75rem}
+.comp{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1rem}
+.cp{border:1px solid var(--border);border-radius:10px;padding:1.6rem 1.4rem;display:flex;flex-direction:column;background:rgba(255,255,255,.012);transition:border-color .25s,background .25s}
+.cp:hover{border-color:rgba(201,151,58,.35);background:var(--card)}
+.cp-hl{border-color:rgba(201,151,58,.35);background:radial-gradient(120% 80% at 100% 0%,rgba(201,151,58,.1),transparent 60%)}
+.cp-n{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;font-style:italic;color:var(--gold2);line-height:1;margin-bottom:1rem}
+.cp-t{font-family:'Fraunces',serif;font-size:1.08rem;font-weight:600;color:var(--cream);line-height:1.25;margin-bottom:.35rem}
+.cp-d{font-size:.8rem;color:var(--muted);line-height:1.5;margin-bottom:1rem}
+.cp-list{list-style:none;display:flex;flex-direction:column;gap:.5rem;flex:1;margin-bottom:1.1rem}
+.cp-list li{font-size:.82rem;color:var(--muted2);line-height:1.45;padding-left:.9rem;position:relative}
+.cp-list li::before{content:'';position:absolute;left:0;top:.55em;width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.cp-w{font-size:.68rem;font-weight:600;letter-spacing:.03em;color:var(--gold2);padding-top:.85rem;border-top:1px solid var(--border)}
+.tools{border:1px solid var(--border);border-radius:10px;padding:1.4rem 1.6rem;display:grid;grid-template-columns:170px 1fr;gap:1rem 1.5rem;align-items:start}
+.tools-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding-top:.15rem}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem 1.5rem}
+.tg{font-size:.84rem;color:var(--cream);line-height:1.5}
+.tg span{display:block;font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.15rem}
+@media(max-width:1000px){
+  .line{grid-template-columns:1fr;gap:1.1rem}
+  .line::before{top:6px;bottom:6px;left:6px;right:auto;width:1px;height:auto;background:linear-gradient(180deg,var(--gold),var(--border2) 60%,var(--gold))}
+  .line li{display:grid;grid-template-columns:13px 2rem 1fr;column-gap:.85rem;padding-right:0;align-items:baseline}
+  .ln-dot{grid-row:1/span 3;margin-bottom:0;align-self:start;margin-top:3px}
+  .ln-n{grid-column:2;grid-row:1}
+  .ln-t,.ln-d,.ln-w{grid-column:3}
+  .ln-d{margin-bottom:.2rem}
+  .comp{grid-template-columns:repeat(2,1fr)}
+  .tools{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .comp{grid-template-columns:1fr}
+  .nums{gap:1.25rem 2rem}
+  .tools-grid{grid-template-columns:1fr 1fr}
+  .tools{padding:1.25rem}
+}
+
 /* FORMAÇÃO — segmentada */
 #formacao{background:var(--ink)}
 .form-segments{display:flex;flex-direction:column;gap:2.5rem}
@@ -143,6 +252,7 @@ section{padding:7rem 6vw}
 .form-inst{font-size:.8rem;color:var(--muted);white-space:nowrap}
 .form-badge{font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(201,151,58,.12);color:var(--gold2);border:1px solid rgba(201,151,58,.25);padding:.18rem .6rem;border-radius:3px;white-space:nowrap}
 .form-row-hl{background:var(--card);border-radius:4px}
+
 /* CARROSSEL DEPOIMENTOS */
 #depoimentos{background:var(--ink2)}
 .carousel-wrap{position:relative;overflow:hidden}
@@ -159,6 +269,7 @@ section{padding:7rem 6vw}
 .carousel-dots{display:flex;gap:.5rem}
 .cdot{width:6px;height:6px;border-radius:50%;background:var(--border2);cursor:pointer;transition:background .2s}
 .cdot.active{background:var(--gold);width:18px;border-radius:3px}
+
 /* CONTATO */
 #contato{background:var(--ink);text-align:center;padding:8rem 6vw}
 .contato-title{font-family:'Fraunces',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:600;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.1}
@@ -170,14 +281,17 @@ section{padding:7rem 6vw}
 .c-link.gold:hover{background:var(--gold2);transform:translateY(-1px)}
 .c-link.outline{border:1px solid var(--border2);color:var(--muted2)}
 .c-link.outline:hover{border-color:var(--gold);color:var(--gold)}
+
 /* FOOTER */
 footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .footer-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--muted)}
 .footer-logo em{color:var(--gold);font-style:italic}
 .footer-copy{font-size:.78rem;color:var(--muted)}
+
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
+
 /* MOBILE */
 @media(max-width:900px){
   .sobre-grid{grid-template-columns:1fr}
@@ -195,6 +309,7 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
 </style>
 </head>
 <body>
+
 <nav id="nav">
   <div class="logo">Guilherme <em>Donzel</em></div>
   <ul class="nav-links">
@@ -205,6 +320,7 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
     <li><a href="#depoimentos">Depoimentos</a></li>
   </ul>
 </nav>
+
 <!-- HERO -->
 <section id="hero">
   <div class="hero-noise"></div>
@@ -212,9 +328,9 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
   <div class="hero-inner">
     <div class="hero-label">Product Manager & Owner · São Paulo</div>
     <h1>Construindo produtos<br>com <em>impacto real</em><br>na vida das pessoas</h1>
-    <p class="hero-role">PM · PO · Crédito & Recebíveis · FIDC · Pagamentos · Consignado · Banking & Tecnologia</p>
+    <p class="hero-role">PM · PO · Crédito & Cobrança · IA Aplicada · Recebíveis · FIDC · Pagamentos · Consignado · Banking & Tecnologia</p>
     <p class="hero-desc">
-      Produto financeiro de alta complexidade é meu território. Conhecimento em: <strong>KYC, onboarding regulado, crédito, recebíveis, FIDC, pagamentos e IA aplicada à operação.</strong> <br> <br>Minha base em QA moldou a forma como construo produto. Sempre com atenção à regra de negócio, rastreabilidade, experiência e confiabilidade em fluxos onde a entrega precisa sustentar a operação.
+      Produto financeiro de alta complexidade é meu território. Conhecimento em: <strong>KYC, onboarding regulado, crédito, cobrança, recebíveis, FIDC, pagamentos e IA aplicada ao produto e à operação.</strong> <br> <br>Minha base em QA moldou a forma como construo produto. Sempre com atenção à regra de negócio, rastreabilidade, experiência e confiabilidade em fluxos onde a entrega precisa sustentar a operação.
     </p>
     <div class="hero-ctas">
       <a href="#cases" class="cta-primary">Ver cases</a>
@@ -222,6 +338,7 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
     </div>
   </div>
 </section>
+
 <!-- SOBRE -->
 <section id="sobre">
   <div class="container">
@@ -235,8 +352,8 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
         <p class="sobre-text reveal">Na <strong>Função Sistemas</strong>, dei meu primeiro passo no mundo financeiro como Analista de Testes — e foi um choque de realidade no bom sentido. Crédito consignado, portabilidade CIP, integração com INSS, Serpro e averbadoras. Em dois anos, fui de Jr I a Pleno, entendendo que <strong>qualidade não é uma etapa: é uma mentalidade</strong>. Ali percebi que queria estar cada vez mais próximo das decisões de produto.</p>
         <p class="sobre-text reveal">Na <strong>Keeggo / Santander F1rst</strong>, atuei no sistema Plard — processamento de crédito de escala global. Simuladores Visa, Mastercard e Maestro, análise de autorização de transações em alto volume, incidentes com causa raiz. A proximidade diária com os Product Owners foi o que mudou minha trajetória: <strong>vi de perto como decisões de produto e regra de negócio se traduzem — ou não — em qualidade de entrega</strong>.</p>
         <p class="sobre-text reveal">Na <strong>Skopia</strong>, a transição aconteceu de forma natural. Comecei como Quality Product Analyst no Internet Banking PJ do Banco Master e evoluí para Product Owner Sênior, assumindo duas squads simultâneas. Conduzi a esteira de pagamentos consignado (PLC/PRC), Canais PJ, Base Consolidada de Risco e antecipação de recebíveis via FIDC — <strong>da conformidade regulatória ao alinhamento com áreas de negócio, crédito e compliance</strong>.</p>
-        <p class="sobre-text reveal">Hoje, como <strong>Product Owner no Grupo One7</strong>, lidero a Esteira de Crédito para MPMEs — um produto amplo, com inteligência artificial aplicada à análise documental e de risco, e um roadmap dividido em múltiplas macrofrentes. Sou o ponto focal de agilidade do grupo — conduzindo ritos, refinamentos técnicos, alinhamentos com fornecedores e garantindo que <strong>cada ciclo entregue valor real para a operação</strong>.</p>
-        <p class="sobre-text reveal">Em paralelo, estou idealizando um <strong>módulo de cobrança do zero</strong> — um produto que nasce com propósito claro: causar impacto real na vida financeira das pessoas, fechando o ciclo completo de análise, concessão e recuperação de crédito.</p>
+        <p class="sobre-text reveal">Hoje sou <strong>Product Owner no Grupo One7</strong>, na frente de <strong>Novas Soluções</strong>, e é aqui que mais consigo colocar ideias de pé e fazer o produto acontecer do jeito que ele deve ser. Partindo da Esteira de Crédito para MPMEs, estamos redesenhando o ciclo do crédito de ponta a ponta: a <strong>One7ai</strong>, nosso assistente de IA, origina propostas na plataforma e no app; o <strong>Dossiê Inteligente</strong> organiza a decisão; e o <strong>módulo de cobrança</strong>, construído do zero com um score de priorização dinâmico, fecha o ciclo na recuperação.</p>
+        <p class="sobre-text reveal">Cada frente evolui sobre a anterior, sem soluções paralelas, e a IA entra também no meu próprio processo, com agentes e skills que escrevem atas, especificações e protótipos. Como ponto focal de agilidade, conduzo ritos e refinamentos e faço a ponte entre negócio, fornecedores e tecnologia, garantindo que <strong>cada ciclo entregue valor real para a operação</strong>.</p>
       </div>
       <div>
         <div class="tl">
@@ -245,12 +362,12 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
             <div class="tl-track"><div class="tl-dot"></div></div>
             <div>
               <div class="tl-role">Product Owner · Grupo One7</div>
-              <div class="tl-co">Soluções Financeiras MPMEs · Híbrido</div>
-              <div class="tl-desc">Esteira de Crédito para MPMEs, com inteligência artificial aplicada à análise documental e de risco. Produto amplo, com múltiplas macrofrentes em evolução contínua. Ponto focal de agilidade — ritos, refinamentos técnicos, alinhamento com fornecedores e áreas internas. Módulo de cobrança em idealização.</div>
+              <div class="tl-co">Novas Soluções · Crédito para MPMEs · Híbrido</div>
+              <div class="tl-desc">Ciclo do crédito redesenhado com IA: originação pela One7ai (plataforma e app Android), decisão com o Dossiê Inteligente e recuperação com o módulo de cobrança, tudo sobre a Esteira de Crédito. Ponto focal de agilidade — ritos, refinamentos técnicos, alinhamento com fornecedores e áreas internas.</div>
             </div>
           </div>
           <div class="tl-item">
-            <div class="tl-year">2025<br>2025</div>
+            <div class="tl-year">2025</div>
             <div class="tl-track"><div class="tl-dot"></div></div>
             <div>
               <div class="tl-role">Product Owner Sênior · Skopia</div>
@@ -259,7 +376,7 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
             </div>
           </div>
           <div class="tl-item">
-            <div class="tl-year">2024<br>2024</div>
+            <div class="tl-year">2024</div>
             <div class="tl-track"><div class="tl-dot"></div></div>
             <div>
               <div class="tl-role">Quality Product Analyst Sênior · Skopia</div>
@@ -299,6 +416,7 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
     </div>
   </div>
 </section>
+
 <!-- CASES -->
 <section id="cases">
   <div class="container">
@@ -306,48 +424,130 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
       <div class="section-eyebrow">Cases</div>
       <h2 class="section-title">Entregas que ficam<br>na <em>operação</em></h2>
     </div>
+
+    <div class="hub reveal">
+      <div class="hub-head">
+        <div class="hub-eyebrow">Grupo One7 · Novas Soluções · 2026 – Atual</div>
+        <h3 class="hub-title">O ciclo do crédito,<br><em>redesenhado com IA</em></h3>
+        <p class="hub-lead">Na One7 estou em Novas Soluções, onde uma ideia vira produto. Tenho espaço para propor, testar e fazer o produto acontecer do jeito que ele deve ser. Em vez de entregar telas soltas, estamos redesenhando o ciclo do crédito para MPMEs (<strong>originar, decidir e recuperar</strong>), com a IA como fio condutor.</p>
+      </div>
+
+      <div class="hub-flow">
+        <aside class="hub-rail" aria-label="Etapas do ciclo">
+          <div class="rail-label">O ciclo</div>
+          <ol class="rail">
+            <li><a class="rail-item active" href="#st-1"><span class="ri-n">01</span><span class="ri-txt"><span class="ri-v">Originar</span><span class="ri-p">One7ai · assistente e app</span></span></a></li>
+            <li><a class="rail-item" href="#st-2"><span class="ri-n">02</span><span class="ri-txt"><span class="ri-v">Decidir</span><span class="ri-p">Dossiê Inteligente</span></span></a></li>
+            <li><a class="rail-item" href="#st-3"><span class="ri-n">03</span><span class="ri-txt"><span class="ri-v">Recuperar</span><span class="ri-p">Módulo de Cobrança</span></span></a></li>
+            <li><a class="rail-item" href="#st-4"><span class="ri-n">04</span><span class="ri-txt"><span class="ri-v">Potencializar</span><span class="ri-p">IA no meu processo</span></span></a></li>
+          </ol>
+          <div class="rail-progress"><span id="railBar"></span></div>
+        </aside>
+
+        <div class="hub-stages">
+          <!-- 01 ORIGINAR -->
+          <article class="stage" id="st-1">
+            <div class="st-top"><span class="st-tag"><b>01</b> Originar</span><span class="case-badge">App publicado</span></div>
+            <h4 class="st-title">One7ai: assistente de IA e app</h4>
+            <p class="st-q">Como trazer a proposta certa, mais rápido e por mais canais, sem abrir mão do controle?</p>
+            <ul class="case-bullets">
+              <li>Assistente conversacional dentro da plataforma: consulta propostas, gargalos e SLA, verifica o enquadramento na política comercial e responde com base na documentação oficial da empresa.</li>
+              <li>App One7ai para Android: o mesmo assistente no celular, com o mesmo login, as mesmas permissões e as mesmas regras.</li>
+              <li>Originação pelo chat: a IA coleta os dados, recebe documentos pela câmera e cria a proposta direto na esteira. A aprovação continua com Crédito e Comitê.</li>
+              <li>Nova modalidade de operação com parceiros: operações originadas na rede são identificadas, enviadas, decididas pela One7 e sincronizadas de volta, com rastreabilidade de ponta a ponta.</li>
+              <li>IA com governança: dados separados por cliente e perfil, proteções contra manipulação e vazamento, auditoria de cada conversa e custo controlado por consumo.</li>
+            </ul>
+            <div class="case-callout">
+              <div class="case-callout-label">Decisão de produto</div>
+              <p>Nada de um segundo chat ou de uma esteira paralela: cada nova frente evolui o que já existe. Regras no backend, as mesmas APIs para plataforma, app e parceiros. Menos custo, uma única fonte de verdade e escala real.</p>
+            </div>
+            <div class="case-chips">
+              <span class="chip">IA Generativa</span><span class="chip">Assistente Conversacional</span>
+              <span class="chip">App Android</span><span class="chip">Originação</span>
+              <span class="chip">Operação com Parceiros</span><span class="chip">Segurança &amp; Auditoria</span>
+            </div>
+          </article>
+
+          <!-- 02 DECIDIR -->
+          <article class="stage" id="st-2">
+            <div class="st-top"><span class="st-tag"><b>02</b> Decidir</span><span class="case-badge">Em construção</span></div>
+            <h4 class="st-title">Dossiê Inteligente de Crédito</h4>
+            <p class="st-q">Como transformar informação espalhada em uma decisão de crédito segura e rápida?</p>
+            <ul class="case-bullets">
+              <li>Visão única, padronizada e orientada à decisão: dados cadastrais, financeiros, restritivos, de garantias e de grupo econômico já disponíveis na esteira, organizados para quem vai decidir.</li>
+              <li>Composição flexível: o analista escolhe os temas, gera o dossiê e inclui ou retira conteúdos depois, com edição estruturada e sem inventar dado que não existe.</li>
+              <li>Separação clara entre dado, texto e estrutura: dado se corrige na origem; texto editado é preservado e sinalizado quando a origem muda.</li>
+              <li>Registro de uma versão somente leitura no envio ao comitê, com data, hora e responsável, enquanto o dossiê segue vivo durante a análise.</li>
+              <li>Preparado para evoluir com comandos assistidos pela One7ai, como "deixe este conteúdo mais executivo".</li>
+            </ul>
+            <div class="case-callout">
+              <div class="case-callout-label">Decisão de produto</div>
+              <p>Especificamos uma área de trabalho completa (cadastral, financeiro, sócios e vínculos, pareceres, exceções), com regras de negócio e Figma. Na hora de priorizar, o Dossiê venceu: entrega mais rápida, mais escalável e com impacto direto na decisão. O backlog da área de trabalho virou base para as próximas evoluções.</p>
+            </div>
+            <div class="case-chips">
+              <span class="chip">Crédito PJ</span><span class="chip">Dossiê Inteligente</span>
+              <span class="chip">Grupo Econômico</span><span class="chip">Rastreabilidade</span>
+              <span class="chip">Priorização</span><span class="chip">Figma</span>
+            </div>
+          </article>
+
+          <!-- 03 RECUPERAR -->
+          <article class="stage" id="st-3">
+            <div class="st-top"><span class="st-tag"><b>03</b> Recuperar</span><span class="case-badge">Especificado · do zero</span></div>
+            <h4 class="st-title">Módulo de Cobrança</h4>
+            <p class="st-q">Qual caso merece atenção agora, e por quê?</p>
+            <ul class="case-bullets">
+              <li>Discovery em workshop com a operação: cada caso exigia investigar várias telas e controles antes de decidir a próxima ação.</li>
+              <li>Produto completo, do zero: parametrização (réguas, status e transições, motivos, exceções e ações automáticas), operação do dia a dia (cedente, sacado, título e carteira, linha do tempo e próxima ação recomendada) e indicadores de gestão.</li>
+              <li><strong style="color:var(--cream);font-weight:500">Score de cobrança dinâmico:</strong> prioriza os casos pelos critérios da política (prazo, valor, produto, situação do cedente), em faixas de criticidade, e é recalculado quando o tempo passa, um pagamento entra ou uma ação é registrada.</li>
+              <li>Score explicável e parametrizável: cada ponto mostra o dado e a regra que o geraram, e o negócio inclui ou retira critérios sem reconstruir a lógica.</li>
+              <li>Figma e protótipo navegável de toda a jornada.</li>
+            </ul>
+            <div class="case-callout">
+              <div class="case-callout-label">Decisão de produto</div>
+              <p>A V1 não tenta automatizar tudo: primeiro visibilidade, rastreabilidade e direcionamento. Automação da régua e recomendação preditiva entram quando as regras e os dados estiverem maduros.</p>
+            </div>
+            <div class="case-chips">
+              <span class="chip">Discovery</span><span class="chip">Score Dinâmico</span>
+              <span class="chip">Régua de Cobrança</span><span class="chip">Parametrização</span>
+              <span class="chip">Protótipo Navegável</span><span class="chip">Indicadores</span>
+            </div>
+          </article>
+
+          <!-- 04 POTENCIALIZAR -->
+          <article class="stage" id="st-4">
+            <div class="st-top"><span class="st-tag"><b>04</b> Potencializar</span><span class="case-badge">Prática contínua</span></div>
+            <h4 class="st-title">Gestão de produto com IA</h4>
+            <p class="st-q">Como um PM entrega mais, e melhor, usando IA no próprio processo?</p>
+            <ul class="case-bullets">
+              <li>Agentes e skills próprios integrados ao Jira e ao Confluence para escrever épicos, histórias, critérios de aceite e especificações funcionais no padrão do time.</li>
+              <li>Prompts aplicados a reuniões para gerar atas coesas, com decisões, pendências e responsáveis ligados aos cards.</li>
+              <li>Protótipos, guias didáticos e documentação de apoio gerados com IA para acelerar o alinhamento com negócio, UX e desenvolvimento.</li>
+              <li>Mais tempo para o que importa: discovery, decisão e acompanhamento do valor entregue.</li>
+            </ul>
+            <div class="case-chips">
+              <span class="chip">Agentes de IA</span><span class="chip">Skills</span>
+              <span class="chip">Prompt Engineering</span><span class="chip">Especificação Funcional</span>
+              <span class="chip">Atas Inteligentes</span><span class="chip">Prototipação</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="hub-base">
+        <span class="hub-base-label">Fundação</span>
+        <p>Tudo isso roda sobre a <strong>Esteira de Crédito para MPMEs</strong>, que lidero e evoluo continuamente: da entrada da proposta à auditoria documental com IA e à performance financeira. Como ponto focal de agilidade, conduzo ritos, refinamentos e o alinhamento entre negócio, fornecedores e tecnologia.</p>
+      </div>
+    </div>
+
+    <div class="prev-head reveal">
+      <span class="prev-tag">Trajetória anterior</span>
+      <span class="prev-sub">Banco Master · Santander F1rst · 2022 – 2025</span>
+    </div>
+    <div class="prev-cases">
     <div class="case-item">
       <div class="case-left">
         <div class="case-number">01</div>
-        <div>
-          <div class="case-badge">Em produção</div>
-          <div class="case-title">Esteira de Crédito</div>
-          <div class="case-co">Grupo One7 · Jan 2026 – Atual</div>
-        </div>
-      </div>
-      <div class="case-right">
-        <div class="case-metrics-row">
-          <div class="cm"><span class="cm-v">8+</span><span class="cm-l">meses de evolução contínua</span></div>
-          <div class="cm"><span class="cm-v">12+</span><span class="cm-l">frentes de produto ativas</span></div>
-          <div class="cm"><span class="cm-v">Multi</span><span class="cm-l">squads e fornecedores</span></div>
-        </div>
-        <ul class="case-bullets">
-          <li>Estruturação de ponta a ponta da esteira de análise e concessão de crédito para MPMEs, da entrada da proposta até a decisão.</li>
-          <li>Automação da auditoria documental, com fluxos de aprovação, devolução e rastreabilidade de eventos.</li>
-          <li>Inteligência artificial proprietária aplicada à leitura e classificação de documentos, acelerando a análise.</li>
-          <li>Módulo de performance financeira e cadastral, com indicadores, histórico e edição controlada.</li>
-          <li>Atuação como ponto focal de agilidade: condução de ritos, refinamentos técnicos e alinhamentos com fornecedores e áreas internas.</li>
-        </ul>
-        <div class="case-sub-label" style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;margin-top:1.5rem">Próximas frentes</div>
-        <ul class="case-bullets">
-          <li>Análise cadastral e societária: dados da empresa, grupo econômico, compliance, KYC e certidões.</li>
-          <li>Análise financeira aprofundada, com simulação de carteira e integrações a fontes externas.</li>
-          <li>Mapeamento de sócios e vínculos, com consultas a bureaus de crédito.</li>
-          <li>Parecer final consolidado, com apoio de IA à decisão, condições operacionais, garantias e limites.</li>
-          <li>Governança operacional: gestão de exceções, atribuições e onboarding da plataforma.</li>
-          <li>Mediação com fornecedores e integrações externas ao longo de todo o fluxo de crédito.</li>
-        </ul>
-        <div class="case-chips" style="margin-top:1rem">
-          <span class="chip">Discovery & Delivery</span>
-          <span class="chip">Crédito PJ</span><span class="chip">Grupo Econômico</span>
-          <span class="chip">IA Aplicada</span><span class="chip">Ponto Focal Ágil</span>
-          <span class="chip">Jira + Confluence</span><span class="chip">Scrum</span>
-        </div>
-      </div>
-    </div>
-    <div class="case-item">
-      <div class="case-left">
-        <div class="case-number">02</div>
         <div>
           <div class="case-badge">Entregue</div>
           <div class="case-title">Internet Banking PJ & Consignado</div>
@@ -371,9 +571,11 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
         </div>
       </div>
     </div>
+
+
     <div class="case-item">
       <div class="case-left">
-        <div class="case-number">03</div>
+        <div class="case-number">02</div>
         <div>
           <div class="case-badge">Projeto global</div>
           <div class="case-title">Produto de Crédito Global</div>
@@ -394,151 +596,107 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
         </div>
       </div>
     </div>
-    <div class="case-item">
-      <div class="case-left">
-        <div class="case-number">04</div>
-        <div>
-          <div class="case-badge" style="color:var(--gold2);border-color:rgba(201,151,58,.25)">Em idealização</div>
-          <div class="case-title">Módulo de Cobrança</div>
-          <div class="case-co">Grupo One7 · 2026</div>
-        </div>
-      </div>
-      <div class="case-right">
-        <ul class="case-bullets">
-          <li>Produto sendo idealizado do zero com foco em impacto real na vida financeira das pessoas — não apenas eficiência operacional.</li>
-          <li>Estruturação da jornada de cobrança com visão de produto: réguas, fluxos de comunicação, canais e tratamento de inadimplência.</li>
-          <li>Discovery ativo com áreas de negócio, crédito e operações para mapear dores reais e oportunidades de automação.</li>
-          <li>Integração prevista com a Esteira de Crédito — criando um ciclo completo de análise, concessão e recuperação.</li>
-        </ul>
-        <div class="case-chips">
-          <span class="chip">Discovery</span><span class="chip">Cobrança</span>
-          <span class="chip">Produto do Zero</span><span class="chip">Integração Esteira</span>
-          <span class="chip">Impacto Social</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
+
 <!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <div class="section-header reveal">
       <div class="section-eyebrow">Competências</div>
-      <h2 class="section-title">Skills & <em>domínios</em></h2>
+      <h2 class="section-title">Domínio profundo,<br><em>visão ampla</em></h2>
     </div>
-    <div class="skills-top reveal">
-      <div class="skill-card">
-        <span class="skill-card-icon">🏦</span>
-        <div class="skill-card-title">Domínio Financeiro</div>
-        <div class="skill-card-highlight">Crédito PJ · Pagamentos · FIDC · IA Documental</div>
-        <ul class="skill-card-list">
-          <li>Crédito PJ / Consignado / Portabilidade CIP</li>
-          <li>Pix, TED, TEF, Boleto — conciliação e limites</li>
-          <li>KYC / Onboarding regulado BACEN</li>
-          <li>Risco de crédito, FIDC e antecipação de recebíveis</li>
-          <li>IA aplicada à análise documental</li>
-          <li>LGPD / PCI-DSS / Regulatório financeiro</li>
-        </ul>
+
+    <div class="dom reveal">
+      <div class="dom-head">
+        <span class="dom-label">Domínio financeiro</span>
+        <span class="dom-sub">Experiência em cada etapa da jornada do crédito</span>
       </div>
-      <div class="skill-card">
-        <span class="skill-card-icon">🎯</span>
-        <div class="skill-card-title">Produto & Estratégia</div>
-        <div class="skill-card-highlight">Discovery · Delivery · Roadmap · Métricas</div>
-        <ul class="skill-card-list">
-          <li>Discovery & Delivery com ritos ágeis</li>
-          <li>Gestão de backlog, priorização e roadmap</li>
-          <li>Épicos, histórias, DoR / DoD / critérios de aceite</li>
-          <li>OKRs, métricas de produto e experimentação A/B</li>
-          <li>Ponto focal de agilidade — refinamentos e cerimônias</li>
-          <li>Alinhamento com fornecedores e stakeholders</li>
-        </ul>
+      <ol class="line">
+        <li><span class="ln-dot"></span><span class="ln-n">01</span><span class="ln-t">Onboarding &amp; KYC</span><span class="ln-d">PJ regulado e validação documental</span><span class="ln-w">Banco Master</span></li>
+        <li><span class="ln-dot"></span><span class="ln-n">02</span><span class="ln-t">Originação</span><span class="ln-d">IA na plataforma e no app, parceiros, consignado</span><span class="ln-w">One7 · Daycoval</span></li>
+        <li><span class="ln-dot"></span><span class="ln-n">03</span><span class="ln-t">Análise &amp; decisão</span><span class="ln-d">Esteira PJ, auditoria com IA e dossiê</span><span class="ln-w">One7 · Daycoval</span></li>
+        <li><span class="ln-dot"></span><span class="ln-n">04</span><span class="ln-t">Concessão</span><span class="ln-d">Consignado (PLC/PRC) e averbação</span><span class="ln-w">Banco Master · Daycoval</span></li>
+        <li><span class="ln-dot"></span><span class="ln-n">05</span><span class="ln-t">Pagamentos</span><span class="ln-d">Pix, TED, TEF, boleto e cartões</span><span class="ln-w">Banco Master · Santander</span></li>
+        <li><span class="ln-dot"></span><span class="ln-n">06</span><span class="ln-t">Risco &amp; recebíveis</span><span class="ln-d">Risco consolidado e FIDC</span><span class="ln-w">Banco Master</span></li>
+        <li><span class="ln-dot"></span><span class="ln-n">07</span><span class="ln-t">Cobrança</span><span class="ln-d">Réguas e score de priorização dinâmico</span><span class="ln-w">One7</span></li>
+      </ol>
+      <div class="dom-foot">
+        <div class="nums">
+          <div class="num"><b>6</b><span>anos em produtos financeiros</span></div>
+          <div class="num"><b>4</b><span>instituições financeiras</span></div>
+          <div class="num"><b>7/7</b><span>etapas da jornada</span></div>
+        </div>
+        <div class="reg-line"><span>Transversal</span>BACEN · LGPD · PCI-DSS · MFA · Auditoria</div>
       </div>
-      <div class="skill-card">
-        <span class="skill-card-icon">🔍</span>
-        <div class="skill-card-title">Qualidade & Engenharia</div>
-        <div class="skill-card-highlight">QA · BDD · Incidentes · Causa Raiz</div>
-        <ul class="skill-card-list">
+    </div>
+
+    <div class="comp reveal">
+      <div class="cp">
+        <div class="cp-n">01</div>
+        <div class="cp-t">Produto de ponta a ponta</div>
+        <p class="cp-d">Da dor real à entrega que sustenta a operação.</p>
+        <ul class="cp-list">
+          <li>Discovery com workshops, JTBD e hipóteses</li>
+          <li>Produto do zero, do workshop ao protótipo navegável</li>
+          <li>Priorização com trade-offs explícitos</li>
+          <li>Regras parametrizáveis e explicáveis</li>
+        </ul>
+        <div class="cp-w">One7 · Skopia</div>
+      </div>
+      <div class="cp cp-hl">
+        <div class="cp-n">02</div>
+        <div class="cp-t">IA aplicada</div>
+        <p class="cp-d">No produto que o cliente usa e no meu processo.</p>
+        <ul class="cp-list">
+          <li>Assistente de IA na plataforma e no app Android</li>
+          <li>IA documental e originação de propostas pelo chat</li>
+          <li>Guardrails, auditoria e custo por consumo</li>
+          <li>Agentes e skills para histórias, specs e atas</li>
+        </ul>
+        <div class="cp-w">One7</div>
+      </div>
+      <div class="cp">
+        <div class="cp-n">03</div>
+        <div class="cp-t">Qualidade desde a origem</div>
+        <p class="cp-d">A base em QA que me faz escrever regras que não quebram.</p>
+        <ul class="cp-list">
+          <li>Regras sem ambiguidade e cenários em BDD</li>
           <li>Testes funcionais, integrados e de regressão</li>
-          <li>Cenários BDD com Gherkin — Octane e Zephyr Scale</li>
-          <li>Simuladores Visa, Mastercard e Maestro via POS</li>
-          <li>Análise de incidentes com SQL e logs</li>
-          <li>Postman / Swagger / SoapUI / Octane</li>
-          <li>Qualidade como mentalidade — não como etapa</li>
+          <li>Incidentes e causa raiz com SQL e logs</li>
+          <li>Simuladores Visa, Mastercard e Maestro</li>
         </ul>
+        <div class="cp-w">Santander F1rst · Daycoval · Skopia</div>
       </div>
-      <div class="skill-card">
-        <span class="skill-card-icon">⚙️</span>
-        <div class="skill-card-title">Tecnologia & Liderança</div>
-        <div class="skill-card-highlight">Cloud · IA · Pessoas · Dados</div>
-        <ul class="skill-card-list">
-          <li>AWS (EC2, S3) · Azure DP900 / AI900</li>
-          <li>Machine Learning / NLP / LLMs aplicados a produto</li>
-          <li>SQL para investigação e análise de dados</li>
-          <li>Lógica de programação com JavaScript</li>
-          <li>Gestão e liderança de pessoas / mentoria</li>
-          <li>Jira · Confluence · Scrum · Kanban</li>
+      <div class="cp">
+        <div class="cp-n">04</div>
+        <div class="cp-t">Pessoas &amp; agilidade</div>
+        <p class="cp-d">Ritmo, clareza e direção para quem constrói comigo.</p>
+        <ul class="cp-list">
+          <li>Ponto focal de agilidade: ritos e refinamentos</li>
+          <li>Duas squads em paralelo</li>
+          <li>Ponte entre negócio, fornecedores e tecnologia</li>
+          <li>Mentoria e desenvolvimento de talentos</li>
         </ul>
+        <div class="cp-w">One7 · Skopia</div>
       </div>
     </div>
-    <div class="skills-chips-wrap reveal">
-      <div class="skills-chips-groups">
-        <div class="sk-group">
-          <div class="sk-group-label">Produto</div>
-          <div class="skills-chips">
-            <span class="sk-chip">Discovery</span><span class="sk-chip">Delivery</span><span class="sk-chip">Backlog</span>
-            <span class="sk-chip">Roadmap</span><span class="sk-chip">OKRs</span><span class="sk-chip">Épicos & Histórias</span>
-            <span class="sk-chip">DoR / DoD</span><span class="sk-chip">Critérios de Aceite</span><span class="sk-chip">Experimentação A/B</span>
-            <span class="sk-chip">Métricas de Produto</span><span class="sk-chip">Governança de Produto</span><span class="sk-chip">Priorização</span>
-          </div>
-        </div>
-        <div class="sk-group">
-          <div class="sk-group-label">Crédito & Finanças</div>
-          <div class="skills-chips">
-            <span class="sk-chip">Crédito PJ</span><span class="sk-chip">Crédito Consignado</span><span class="sk-chip">Portabilidade CIP</span>
-            <span class="sk-chip">Renegociação (PRC)</span><span class="sk-chip">Proposta de Crédito (PLC)</span><span class="sk-chip">Antecipação de Recebíveis</span>
-            <span class="sk-chip">FIDC</span><span class="sk-chip">Base Consolidada de Risco</span><span class="sk-chip">Risco de Crédito</span>
-            <span class="sk-chip">Grupo Econômico</span><span class="sk-chip">Análise Cadastral</span><span class="sk-chip">Cobrança</span>
-          </div>
-        </div>
-        <div class="sk-group">
-          <div class="sk-group-label">Pagamentos & Banking</div>
-          <div class="skills-chips">
-            <span class="sk-chip">Pix</span><span class="sk-chip">TED</span><span class="sk-chip">TEF</span><span class="sk-chip">Boleto</span>
-            <span class="sk-chip">Internet Banking PJ</span><span class="sk-chip">Canais PJ</span><span class="sk-chip">KYC</span>
-            <span class="sk-chip">Onboarding BACEN</span><span class="sk-chip">LGPD</span><span class="sk-chip">PCI-DSS</span>
-            <span class="sk-chip">Compliance</span><span class="sk-chip">Formalização</span>
-          </div>
-        </div>
-        <div class="sk-group">
-          <div class="sk-group-label">Qualidade & Testes</div>
-          <div class="skills-chips">
-            <span class="sk-chip">BDD</span><span class="sk-chip">Gherkin</span><span class="sk-chip">Testes Funcionais</span>
-            <span class="sk-chip">Testes Integrados</span><span class="sk-chip">Testes de Regressão</span><span class="sk-chip">Causa Raiz</span>
-            <span class="sk-chip">Análise de Incidentes</span><span class="sk-chip">Visa / Mastercard / Maestro</span>
-            <span class="sk-chip">Octane</span><span class="sk-chip">Zephyr Scale</span><span class="sk-chip">Postman</span><span class="sk-chip">SoapUI</span>
-          </div>
-        </div>
-        <div class="sk-group">
-          <div class="sk-group-label">IA & Tecnologia</div>
-          <div class="skills-chips">
-            <span class="sk-chip">IA Aplicada</span><span class="sk-chip">IA Generativa</span><span class="sk-chip">LLMs</span>
-            <span class="sk-chip">Machine Learning</span><span class="sk-chip">NLP</span><span class="sk-chip">Deep Learning</span>
-            <span class="sk-chip">AWS (EC2, S3)</span><span class="sk-chip">Azure DP900</span><span class="sk-chip">Azure AI900</span>
-            <span class="sk-chip">SQL</span><span class="sk-chip">JavaScript</span><span class="sk-chip">Swagger</span>
-          </div>
-        </div>
-        <div class="sk-group">
-          <div class="sk-group-label">Agilidade & Ferramentas</div>
-          <div class="skills-chips">
-            <span class="sk-chip">Scrum</span><span class="sk-chip">Kanban</span><span class="sk-chip">Jira</span><span class="sk-chip">Confluence</span>
-            <span class="sk-chip">Refinamento</span><span class="sk-chip">Planning</span><span class="sk-chip">Review</span><span class="sk-chip">Retrospectiva</span>
-            <span class="sk-chip">Gestão de Pessoas</span><span class="sk-chip">Mentoria</span><span class="sk-chip">Stakeholders</span><span class="sk-chip">Eficiência Operacional</span>
-          </div>
-        </div>
+
+    <div class="tools reveal">
+      <div class="tools-label">Caixa de ferramentas</div>
+      <div class="tools-grid">
+        <div class="tg"><span>IA</span>Claude · Agentes &amp; skills · LLMs</div>
+        <div class="tg"><span>Produto</span>Jira · Confluence · Figma · Scrum · Kanban</div>
+        <div class="tg"><span>Código &amp; publicação</span>GitHub · JavaScript</div>
+        <div class="tg"><span>Dados &amp; APIs</span>SQL · Postman · Swagger · SoapUI</div>
+        <div class="tg"><span>Qualidade</span>Gherkin · Zephyr Scale · Octane</div>
+        <div class="tg"><span>Cloud</span>AWS · Azure</div>
       </div>
     </div>
   </div>
 </section>
+
 <!-- FORMAÇÃO -->
 <section id="formacao">
   <div class="container">
@@ -640,6 +798,7 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
     </div>
   </div>
 </section>
+
 <!-- DEPOIMENTOS — CARROSSEL -->
 <section id="depoimentos">
   <div class="container">
@@ -710,6 +869,7 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
     </div>
   </div>
 </section>
+
 <!-- CONTATO -->
 <section id="contato">
   <div class="container">
@@ -720,24 +880,48 @@ footer{padding:2rem 6vw;border-top:1px solid var(--border);display:flex;align-it
     </div>
   </div>
 </section>
+
 <footer>
   <div class="footer-logo">Guilherme <em>Donzel</em></div>
   <div class="footer-copy">Product Manager & Owner · São Paulo, SP · 2026</div>
 </footer>
+
 <script>
 // Scroll reveal
 const obs = new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal,.tl-item,.case-item').forEach(el=>obs.observe(el));
 document.querySelectorAll('.case-item').forEach((el,i)=>el.style.transitionDelay=`${i*.1}s`);
 document.querySelectorAll('.tl-item').forEach((el,i)=>el.style.transitionDelay=`${i*.1}s`);
+
+// Hub One7 — trilho do ciclo acompanha a rolagem
+(function(){
+  const hub=document.querySelector('.hub');
+  const items=[...document.querySelectorAll('.rail-item')];
+  const stages=[...document.querySelectorAll('.stage')];
+  const bar=document.getElementById('railBar');
+  if(!hub||!stages.length) return;
+  hub.classList.add('hub-live');
+  function setActive(i){
+    items.forEach((it,j)=>{it.classList.toggle('active',j===i);it.classList.toggle('done',j<i);if(j===i)it.setAttribute('aria-current','step');else it.removeAttribute('aria-current');});
+    stages.forEach((s,j)=>s.classList.toggle('active',j===i));
+    if(bar) bar.style.width=((i+1)/stages.length*100)+'%';
+  }
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setActive(stages.indexOf(e.target));}),{rootMargin:'-40% 0px -55% 0px'});
+  stages.forEach(s=>io.observe(s));
+  setActive(0);
+})();
+
 // Nav scroll
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40));
+
 // Carrossel
 const track = document.getElementById('track');
 const cards = track.querySelectorAll('.dep-card');
 const dotsEl = document.getElementById('dots');
 let cur = 0;
+
 function getVisible(){return window.innerWidth<=900?1:3}
+
 function buildDots(){
   dotsEl.innerHTML='';
   const pages=Math.ceil(cards.length/getVisible());
@@ -748,6 +932,7 @@ function buildDots(){
     dotsEl.appendChild(d);
   }
 }
+
 function goTo(idx){
   const v=getVisible();
   const max=cards.length-v;
@@ -760,6 +945,7 @@ function goTo(idx){
     d.classList.toggle('active',i===Math.floor(cur/v));
   });
 }
+
 document.getElementById('prev').onclick=()=>goTo(cur-getVisible());
 document.getElementById('next').onclick=()=>goTo(cur+getVisible());
 window.addEventListener('resize',()=>{buildDots();goTo(0)});
